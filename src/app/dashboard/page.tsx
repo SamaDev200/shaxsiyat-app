@@ -223,11 +223,10 @@ export default function Dashboard() {
                   transition={{ delay: 0.6 + i * 0.1 }}
                   className="bg-white/[0.04] border border-white/5 rounded-xl p-4 hover:bg-white/[0.08] transition-colors"
                 >
-                  <h4 className="text-white font-semibold mb-1 flex items-center gap-2">
-                    <FiArrowRight className="text-purple-400 w-4 h-4 flex-shrink-0" />
+                  <h4 className="text-white font-semibold mb-1 flex items-center gap-2 text-base">
                     {c.title}
                   </h4>
-                  <p className="text-gray-400 text-sm pl-6">{c.reason}</p>
+                  <p className="text-gray-400 text-sm mt-1">{c.reason}</p>
                 </motion.div>
               ))}
             </div>

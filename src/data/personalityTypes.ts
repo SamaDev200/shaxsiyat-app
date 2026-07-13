@@ -18,10 +18,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Strategik fikrlash qobiliyati", "Mustaqillik va dadillik", "Kuchli analitik aql", "Maqsadga yo'naltirilganlik"],
     weaknesses: ["Haddan tashqari tanqidchilik", "Hissiyotlarni ifoda etishda qiyinchilik", "Boshqalarning fikrlarini e'tiborsiz qoldirish", "Perfeksionizm"],
     careers: [
-      { title: "Dasturiy ta'minot arxitektori", reason: "Murakkab tizimlarni loyihalash va strategik texnologik qarorlar qabul qilish qobiliyati" },
-      { title: "Ilmiy tadqiqotchi", reason: "Chuqur tahlil va uzoq muddatli loyihalar bilan ishlash ishtiyoqi" },
-      { title: "Moliyaviy tahlilchi", reason: "Analitik fikrlash va katta hajmdagi ma'lumotlarni qayta ishlash qobiliyati" },
-      { title: "Biznes-strateg", reason: "Kelajakni bashorat qilish va strategik rejalar tuzish mahorati" }
+      { title: "💻 Dasturiy ta'minot arxitektori", reason: "Murakkab tizimlarni loyihalash va strategik texnologik qarorlar qabul qilish qobiliyati" },
+      { title: "🔬 Ilmiy tadqiqotchi", reason: "Chuqur tahlil va uzoq muddatli loyihalar bilan ishlash ishtiyoqi" },
+      { title: "📊 Moliyaviy tahlilchi", reason: "Analitik fikrlash va katta hajmdagi ma'lumotlarni qayta ishlash qobiliyati" },
+      { title: "📈 Biznes-strateg", reason: "Kelajakni bashorat qilish va strategik rejalar tuzish mahorati" }
     ],
     recommendations: [
       "Hissiyotlaringizni ifoda etishni mashq qiling — bu munosabatlarni mustahkamlaydi.",
@@ -38,10 +38,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Analitik va mantiqiy fikrlash", "Ijodiy muammolarni hal qilish", "Ochiq fikrlilik", "Bilimga chanqoqlik"],
     weaknesses: ["Ijtimoiy vaziyatlarda noqulaylik", "Loyihalarni oxirigacha yetkazmay qo'yish", "Hissiyotlarga befarqlik", "Ortiqcha o'ylash"],
     careers: [
-      { title: "Dasturchi / Backend Developer", reason: "Mantiqiy masalalarni yechish va murakkab algoritmlar yaratish qobiliyati" },
-      { title: "Ma'lumotlar tahlilchisi", reason: "Katta hajmdagi ma'lumotlarda qonuniyatlarni topish mahorati" },
-      { title: "Fizik yoki matematik", reason: "Nazariy masalalar ustida chuqur fikrlash va tadqiqot qilish ishtiyoqi" },
-      { title: "Falsafachi yoki yozuvchi", reason: "G'oyalarni chuqur tahlil qilish va original fikrlash qobiliyati" }
+      { title: "🧑‍💻 Dasturchi / Backend Developer", reason: "Mantiqiy masalalarni yechish va murakkab algoritmlar yaratish qobiliyati" },
+      { title: "📉 Ma'lumotlar tahlilchisi", reason: "Katta hajmdagi ma'lumotlarda qonuniyatlarni topish mahorati" },
+      { title: "🧪 Fizik yoki matematik", reason: "Nazariy masalalar ustida chuqur fikrlash va tadqiqot qilish ishtiyoqi" },
+      { title: "✍️ Falsafachi yoki yozuvchi", reason: "G'oyalarni chuqur tahlil qilish va original fikrlash qobiliyati" }
     ],
     recommendations: [
       "Boshlagan ishlaringizni oxirigacha yetkazish odatini shakllantiring.",
@@ -58,10 +58,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Tabiiy yetakchilik qobiliyati", "Samaradorlik va maqsadga intilish", "Strategik rejalashtirish", "O'ziga ishonch"],
     weaknesses: ["Sabrsizlik", "Haddan tashqari talabchanlik", "Boshqalarning hissiyotlarini e'tiborsiz qoldirish", "Murosaga kelishda qiyinchilik"],
     careers: [
-      { title: "Kompaniya rahbari (CEO)", reason: "Tabiiy yetakchilik va strategik fikrlash qobiliyati" },
-      { title: "Loyiha menejeri", reason: "Jamoani boshqarish va natijaga erishish mahorati" },
-      { title: "Huquqshunos / Advokat", reason: "Dadillik, mantiqiy munozara va ishontirish qobiliyati" },
-      { title: "Tadbirkor", reason: "Risk olish tayorligi va strategik qarorlar qabul qilish mahorati" }
+      { title: "🏢 Kompaniya rahbari (CEO)", reason: "Tabiiy yetakchilik va strategik fikrlash qobiliyati" },
+      { title: "📋 Loyiha menejeri", reason: "Jamoani boshqarish va natijaga erishish mahorati" },
+      { title: "⚖️ Huquqshunos / Advokat", reason: "Dadillik, mantiqiy munozara va ishontirish qobiliyati" },
+      { title: "🚀 Tadbirkor", reason: "Risk olish tayorligi va strategik qarorlar qabul qilish mahorati" }
     ],
     recommendations: [
       "Jamoangiz a'zolarining hissiyotlarini ham hisobga oling.",
@@ -78,10 +78,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["G'oyalar generatsiyasi", "Tez fikrlash va topqirlik", "Moslashuvchanlik", "Ishontirish qobiliyati"],
     weaknesses: ["Boshlagan ishni tashlab ketish", "Rutinadan zerikish", "Ba'zan tortishuvchilik", "Diqqatni jamlashda qiyinchilik"],
     careers: [
-      { title: "Tadbirkor / Startup asoschisi", reason: "Yangi g'oyalarni amalga oshirish va innovatsion fikrlash qobiliyati" },
-      { title: "Marketing strategi", reason: "Ijodiy kampaniyalar yaratish va auditoriyani jalb qilish mahorati" },
-      { title: "Konsultant", reason: "Turli sohalarda muammolarga nostandart yechim topish qobiliyati" },
-      { title: "Jurnalist / Yozuvchi", reason: "Mavzularni chuqur o'rganish va qiziqarli tarzda yoritish mahorati" }
+      { title: "💡 Tadbirkor / Startup asoschisi", reason: "Yangi g'oyalarni amalga oshirish va innovatsion fikrlash qobiliyati" },
+      { title: "📢 Marketing strategi", reason: "Ijodiy kampaniyalar yaratish va auditoriyani jalb qilish mahorati" },
+      { title: "🤝 Konsultant", reason: "Turli sohalarda muammolarga nostandart yechim topish qobiliyati" },
+      { title: "📰 Jurnalist / Yozuvchi", reason: "Mavzularni chuqur o'rganish va qiziqarli tarzda yoritish mahorati" }
     ],
     recommendations: [
       "Bir vaqtda bir loyihaga e'tibor qarating va uni oxirigacha yetkazing.",
@@ -98,10 +98,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Chuqur empatiya va tushunish", "Kuchli intuitsiya", "Ijodkorlik", "Maqsadga sodiqlik"],
     weaknesses: ["Ortiqcha idealizm", "O'zini emotsional jihatdan charchatish", "Tanqidni og'ir qabul qilish", "Perfeksionizm"],
     careers: [
-      { title: "Psixolog / Maslahatchi", reason: "Chuqur empatiya va insonlarni tushunish qobiliyati" },
-      { title: "Yozuvchi / Muallif", reason: "Boy ichki dunyo va hissiyotlarni so'z bilan ifodalash mahorati" },
-      { title: "O'qituvchi / Murabbiy", reason: "Boshqalarga ilhom berish va ularning rivojlanishiga hissa qo'shish ishtiyoqi" },
-      { title: "Ijtimoiy xodim", reason: "Zaif guruhlarga yordam berish va jamiyatni yaxshilash istagi" }
+      { title: "🛋️ Psixolog / Maslahatchi", reason: "Chuqur empatiya va insonlarni tushunish qobiliyati" },
+      { title: "✒️ Yozuvchi / Muallif", reason: "Boy ichki dunyo va hissiyotlarni so'z bilan ifodalash mahorati" },
+      { title: "🧑‍🏫 O'qituvchi / Murabbiy", reason: "Boshqalarga ilhom berish va ularning rivojlanishiga hissa qo'shish ishtiyoqi" },
+      { title: "🤝 Ijtimoiy xodim", reason: "Zaif guruhlarga yordam berish va jamiyatni yaxshilash istagi" }
     ],
     recommendations: [
       "O'zingizga g'amxo'rlik qilishni unutmang — avval o'z holatlaringizga e'tibor bering.",
@@ -118,10 +118,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Chuqur hissiyotli va empatik", "Ijodiy fikrlash", "Qadriyatlarga sodiqlik", "Moslashuvchanlik"],
     weaknesses: ["Ortiqcha hayal bastarlik", "O'zini izolyatsiya qilish", "Amaliy masalalarda qiyinchilik", "O'ta sezgirlik"],
     careers: [
-      { title: "Grafik dizayner", reason: "Ijodiy tasavvur va go'zallikni yaratish qobiliyati" },
-      { title: "Yozuvchi / Shoir", reason: "Chuqur hissiyotlarni so'z orqali ifodalash mahorati" },
-      { title: "Psixoterapevt", reason: "Insonlarni tushunish va ularning ichki dunyosiga kirib borish qobiliyati" },
-      { title: "Musiqa yoki san'at sohasida faoliyat", reason: "Hissiyotlarni san'at orqali ifodalash va boshqalarga ilhom berish" }
+      { title: "🎨 Grafik dizayner", reason: "Ijodiy tasavvur va go'zallikni yaratish qobiliyati" },
+      { title: "📝 Yozuvchi / Shoir", reason: "Chuqur hissiyotlarni so'z orqali ifodalash mahorati" },
+      { title: "🛋️ Psixoterapevt", reason: "Insonlarni tushunish va ularning ichki dunyosiga kirib borish qobiliyati" },
+      { title: "🎵 Musiqa yoki san'at sohasida faoliyat", reason: "Hissiyotlarni san'at orqali ifodalash va boshqalarga ilhom berish" }
     ],
     recommendations: [
       "Xayolparastlikdan amaliy qadamlarga o'tishni mashq qiling.",
@@ -138,10 +138,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Kuchli empatiya", "Ilhom berish qobiliyati", "Tashkilotchilik", "Odamlarni jipslashtirish"],
     weaknesses: ["O'zini boshqalar uchun fido qilish", "Yo'q deyishda qiyinchilik", "O'ta idealistlik", "O'z ehtiyojlarini e'tiborsiz qoldirish"],
     careers: [
-      { title: "HR menejeri", reason: "Insonlarni tushunish va jamoani boshqarish mahorati" },
-      { title: "O'qituvchi / Professor", reason: "Ilhom berish va bilim ulashish ishtiyoqi" },
-      { title: "Ijtimoiy tadbirkor", reason: "Jamiyat uchun foyda keltiradigan loyihalarni boshqarish qobiliyati" },
-      { title: "Diplomatik xodim", reason: "Muzokaralar olib borish va insonlar o'rtasida ko'prik bo'lish mahorati" }
+      { title: "👥 HR menejeri", reason: "Insonlarni tushunish va jamoani boshqarish mahorati" },
+      { title: "🎓 O'qituvchi / Professor", reason: "Ilhom berish va bilim ulashish ishtiyoqi" },
+      { title: "🌍 Ijtimoiy tadbirkor", reason: "Jamiyat uchun foyda keltiradigan loyihalarni boshqarish qobiliyati" },
+      { title: "🤝 Diplomatik xodim", reason: "Muzokaralar olib borish va insonlar o'rtasida ko'prik bo'lish mahorati" }
     ],
     recommendations: [
       "O'z ehtiyojlaringizga ham e'tibor bering — avval o'zingizga g'amxo'rlik qiling.",
@@ -158,10 +158,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Ijodiy energiya", "Odamlarga ilhom berish", "Moslashuvchanlik", "Optimizm va ishtiyoq"],
     weaknesses: ["Diqqatni jamlashda qiyinchilik", "O'ta hissiy bo'lish", "Tez zerikish", "Ishlarni oxirigacha yetkazmaslik"],
     careers: [
-      { title: "Kontent yaratuvchi / Bloger", reason: "Ijodiy fikrlash va auditoriyani jalb qilish qobiliyati" },
-      { title: "Marketing menejeri", reason: "Odamlar bilan ishlash va yangi g'oyalar yaratish mahorati" },
-      { title: "Aktyor / San'atkor", reason: "Hissiyotlarni ifodalash va auditoriya bilan aloqa o'rnatish qobiliyati" },
-      { title: "Tadbirkor", reason: "Ishtiyoq, moslashuvchanlik va yangilik yaratishga bo'lgan intilish" }
+      { title: "📱 Kontent yaratuvchi / Bloger", reason: "Ijodiy fikrlash va auditoriyani jalb qilish qobiliyati" },
+      { title: "🎯 Marketing menejeri", reason: "Odamlar bilan ishlash va yangi g'oyalar yaratish mahorati" },
+      { title: "🎭 Aktyor / San'atkor", reason: "Hissiyotlarni ifodalash va auditoriya bilan aloqa o'rnatish qobiliyati" },
+      { title: "🚀 Tadbirkor", reason: "Ishtiyoq, moslashuvchanlik va yangilik yaratishga bo'lgan intilish" }
     ],
     recommendations: [
       "Diqqatingizni jamlash uchun kundalik tartib o'rnating.",
@@ -178,10 +178,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Ishonchlilik va mas'uliyat", "Tartiblilik", "Puxtalik va sifatga intilish", "Amaliy fikrlash"],
     weaknesses: ["O'zgarishlarga moslashishda qiyinchilik", "Haddan tashqari qatʼiylik", "Hissiyotlarni ifoda etishda qiyinchilik", "Yangiliklarga shubha bilan qarash"],
     careers: [
-      { title: "Buxgalter / Moliyachi", reason: "Raqamlar bilan aniq va tartibli ishlash qobiliyati" },
-      { title: "Huquqshunos", reason: "Qonun va qoidalarga bo'lgan hurmat va puxta tahlil qilish mahorati" },
-      { title: "Muhandis", reason: "Amaliy masalalarni aniq va sifatli hal qilish qobiliyati" },
-      { title: "Ma'muriy boshqaruvchi", reason: "Tashkilotchilik va tartibni saqlash mahorati" }
+      { title: "🧮 Buxgalter / Moliyachi", reason: "Raqamlar bilan aniq va tartibli ishlash qobiliyati" },
+      { title: "⚖️ Huquqshunos", reason: "Qonun va qoidalarga bo'lgan hurmat va puxta tahlil qilish mahorati" },
+      { title: "⚙️ Muhandis", reason: "Amaliy masalalarni aniq va sifatli hal qilish qobiliyati" },
+      { title: "📁 Ma'muriy boshqaruvchi", reason: "Tashkilotchilik va tartibni saqlash mahorati" }
     ],
     recommendations: [
       "Yangiliklarga ochiqroq bo'ling — o'zgarish har doim yomon emas.",
@@ -198,10 +198,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["G'amxo'rlik va sadoqat", "Ishonchlilik", "Puxta kuzatuvchanlik", "Sabr-toqat"],
     weaknesses: ["O'zini kam baholash", "Yo'q deyishda qiyinchilik", "O'zgarishlarga qarshilik", "O'z ehtiyojlarini e'tiborsiz qoldirish"],
     careers: [
-      { title: "Tibbiyot hamshirasi / Shifokor", reason: "G'amxo'rlik va bemorlarga diqqat bilan yondashish qobiliyati" },
-      { title: "O'qituvchi (boshlang'ich sinf)", reason: "Sabr-toqat va bolalarga g'amxo'rlik qilish mahorati" },
-      { title: "Kutubxonachi / Arxivarius", reason: "Tartiblilik va ma'lumotlarni saqlash qobiliyati" },
-      { title: "Ijtimoiy xodim", reason: "Boshqalarga yordam berish va ularning ehtiyojlarini tushunish" }
+      { title: "🩺 Tibbiyot hamshirasi / Shifokor", reason: "G'amxo'rlik va bemorlarga diqqat bilan yondashish qobiliyati" },
+      { title: "🏫 O'qituvchi (boshlang'ich sinf)", reason: "Sabr-toqat va bolalarga g'amxo'rlik qilish mahorati" },
+      { title: "📚 Kutubxonachi / Arxivarius", reason: "Tartiblilik va ma'lumotlarni saqlash qobiliyati" },
+      { title: "🤝 Ijtimoiy xodim", reason: "Boshqalarga yordam berish va ularning ehtiyojlarini tushunish" }
     ],
     recommendations: [
       "O'z qadriyatingizni tan oling — siz ko'p narsaga loyiqsiz.",
@@ -218,10 +218,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Tashkilotchilik", "Mas'uliyatlilik", "Amaliy yondashuv", "Yetakchilik qobiliyati"],
     weaknesses: ["O'ta qat'iylik", "Yangiliklarga qarshilik", "Boshqalarning hissiyotlarini e'tiborsiz qoldirish", "Moslashuvchanlik yetishmasligi"],
     careers: [
-      { title: "Biznes boshqaruvchisi", reason: "Tashkilotchilik va jamoani natijaga yetaklash qobiliyati" },
-      { title: "Harbiy xodim", reason: "Intizom, tartib va mas'uliyatga bo'lgan sadoqat" },
-      { title: "Moliyaviy boshqaruvchi", reason: "Resurslarni samarali taqsimlash va nazorat qilish mahorati" },
-      { title: "Sudya / Prokuror", reason: "Adolat va qonun ustuvorligiga bo'lgan sadoqat" }
+      { title: "🏢 Biznes boshqaruvchisi", reason: "Tashkilotchilik va jamoani natijaga yetaklash qobiliyati" },
+      { title: "🎖️ Harbiy xodim", reason: "Intizom, tartib va mas'uliyatga bo'lgan sadoqat" },
+      { title: "💰 Moliyaviy boshqaruvchi", reason: "Resurslarni samarali taqsimlash va nazorat qilish mahorati" },
+      { title: "⚖️ Sudya / Prokuror", reason: "Adolat va qonun ustuvorligiga bo'lgan sadoqat" }
     ],
     recommendations: [
       "Boshqalarning fikr va hissiyotlarini tinglashga vaqt ajrating.",
@@ -238,10 +238,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Ijtimoiylik va muloqotchanlik", "G'amxo'rlik", "Ishonchlilik", "Jamoa ruhini mustahkamlash"],
     weaknesses: ["Boshqalarning fikriga haddan tashqari bog'liqlik", "Tanqidni og'ir qabul qilish", "O'zgarishlarga moslashishda qiyinchilik", "O'z manfaatlarini e'tiborsiz qoldirish"],
     careers: [
-      { title: "Tibbiyot xodimi", reason: "G'amxo'rlik va bemorlarga shaxsiy yondashuv mahorati" },
-      { title: "Tadbirlarni tashkil etuvchi", reason: "Ijtimoiy munosabatlar va tashkilotchilik qobiliyati" },
-      { title: "Mijozlar bilan ishlash menejeri", reason: "Odamlar bilan muloqot va muammolarni hal qilish qobiliyati" },
-      { title: "O'qituvchi", reason: "G'amxo'rlik va o'quvchilarga individual yondashish mahorati" }
+      { title: "🏥 Tibbiyot xodimi", reason: "G'amxo'rlik va bemorlarga shaxsiy yondashuv mahorati" },
+      { title: "🎉 Tadbirlarni tashkil etuvchi", reason: "Ijtimoiy munosabatlar va tashkilotchilik qobiliyati" },
+      { title: "🎧 Mijozlar bilan ishlash menejeri", reason: "Odamlar bilan muloqot va muammolarni hal qilish qobiliyati" },
+      { title: "🧑‍🏫 O'qituvchi", reason: "G'amxo'rlik va o'quvchilarga individual yondashish mahorati" }
     ],
     recommendations: [
       "O'z fikr va ehtiyojlaringizni ham bildirishni o'rganing.",
@@ -258,10 +258,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Amaliy mahorat", "Muammolarni tez hal qilish", "Moslashuvchanlik", "Sovuqqon fikrlash"],
     weaknesses: ["Hissiyotlarni ifoda etishda qiyinchilik", "Uzoq muddatli majburiyatlarga nisbatan befarqlik", "Qoidalarga qarshilik", "Sabrsizlik"],
     careers: [
-      { title: "Muhandis / Mexanik", reason: "Mexanizmlarni tushunish va amaliy muammolarni hal qilish qobiliyati" },
-      { title: "Dasturchi", reason: "Mantiqiy fikrlash va texnologiyalar bilan ishlash mahorati" },
-      { title: "Pilot / Haydovchi", reason: "Tez qaror qabul qilish va texnik ko'nikmalar" },
-      { title: "Kriminalist / Tergovchi", reason: "Dalillarni tahlil qilish va mantiqiy xulosalar chiqarish qobiliyati" }
+      { title: "🔧 Muhandis / Mexanik", reason: "Mexanizmlarni tushunish va amaliy muammolarni hal qilish qobiliyati" },
+      { title: "💻 Dasturchi", reason: "Mantiqiy fikrlash va texnologiyalar bilan ishlash mahorati" },
+      { title: "✈️ Pilot / Haydovchi", reason: "Tez qaror qabul qilish va texnik ko'nikmalar" },
+      { title: "🕵️ Kriminalist / Tergovchi", reason: "Dalillarni tahlil qilish va mantiqiy xulosalar chiqarish qobiliyati" }
     ],
     recommendations: [
       "Hissiyotlaringizni yaqinlaringiz bilan baham ko'rishga harakat qiling.",
@@ -278,10 +278,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Ijodiy sezgirlik", "Moslashuvchanlik", "G'amxo'rlik va hamdardlik", "Estetik did"],
     weaknesses: ["Nizolarga qarshilik", "O'zini kam baholash", "Uzoq muddatli rejalashtirishda qiyinchilik", "O'ta sezgirlik"],
     careers: [
-      { title: "Dizayner (grafik, ichki dizayn)", reason: "Estetik did va go'zallikni yaratish qobiliyati" },
-      { title: "Musiqa ijodkori", reason: "Hissiyotlarni musiqa orqali ifodalash mahorati" },
-      { title: "Fotograf", reason: "Go'zallikni ko'rish va uni qayd etish qobiliyati" },
-      { title: "Veterinar", reason: "Hayvonlarga g'amxo'rlik va tabiiy muhitda ishlash ishtiyoqi" }
+      { title: "🎨 Dizayner (grafik, ichki dizayn)", reason: "Estetik did va go'zallikni yaratish qobiliyati" },
+      { title: "🎹 Musiqa ijodkori", reason: "Hissiyotlarni musiqa orqali ifodalash mahorati" },
+      { title: "📸 Fotograf", reason: "Go'zallikni ko'rish va uni qayd etish qobiliyati" },
+      { title: "🐾 Veterinar", reason: "Hayvonlarga g'amxo'rlik va tabiiy muhitda ishlash ishtiyoqi" }
     ],
     recommendations: [
       "O'z qiymatlaringizni tan oling va ularni baland ovozda ifodalang.",
@@ -298,10 +298,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Tezkor qaror qabul qilish", "Amaliy muammolarni hal qilish", "Ijtimoiy moslashuvchanlik", "Energiya va ishtiyoq"],
     weaknesses: ["Sabrsizlik", "Risk olishga moyillik", "Uzoq muddatli rejalarni tuzishda qiyinchilik", "Boshqalar hissiyotlariga befarqlik"],
     careers: [
-      { title: "Savdo menejeri", reason: "Odamlarni ishontirish va tezkor qaror qabul qilish qobiliyati" },
-      { title: "Sportchi / Trener", reason: "Jismoniy faollik va raqobatga bo'lgan ishtiyoq" },
-      { title: "Favqulodda vaziyatlar xodimi", reason: "Stress ostida tez qaror qabul qilish qobiliyati" },
-      { title: "Tadbirkor", reason: "Risk olish tayorligi va amaliy yondashuv" }
+      { title: "🤝 Savdo menejeri", reason: "Odamlarni ishontirish va tezkor qaror qabul qilish qobiliyati" },
+      { title: "🏅 Sportchi / Trener", reason: "Jismoniy faollik va raqobatga bo'lgan ishtiyoq" },
+      { title: "🚒 Favqulodda vaziyatlar xodimi", reason: "Stress ostida tez qaror qabul qilish qobiliyati" },
+      { title: "💼 Tadbirkor", reason: "Risk olish tayorligi va amaliy yondashuv" }
     ],
     recommendations: [
       "Qarorlaringizning uzoq muddatli oqibatlarini o'ylab ko'ring.",
@@ -318,10 +318,10 @@ export const personalityTypes: Record<string, PersonalityType> = {
     strengths: ["Ijtimoiy ko'nikmalar", "Optimizm va ishtiyoq", "Amaliy fikrlash", "Moslashuvchanlik"],
     weaknesses: ["Uzoq muddatli rejalarni tuzishda qiyinchilik", "Diqqatni jamlashda muammo", "Jiddiy mavzularga befarqlik", "Xarajatlarni nazorat qilishda qiyinchilik"],
     careers: [
-      { title: "Aktyor / Artist", reason: "Auditoriya oldida chiqish va e'tiborni tortish qobiliyati" },
-      { title: "Mehmondo'stlik sohasi menejeri", reason: "Odamlar bilan muloqot va xushmuomalalik" },
-      { title: "Tadbirlarni tashkil etuvchi", reason: "Energiya, ijtimoiylik va tashkilotchilik qobiliyati" },
-      { title: "Savdo mutaxassisi", reason: "Ishontirish va odamlar bilan tez til topish mahorati" }
+      { title: "🎬 Aktyor / Artist", reason: "Auditoriya oldida chiqish va e'tiborni tortish qobiliyati" },
+      { title: "🏨 Mehmondo'stlik sohasi menejeri", reason: "Odamlar bilan muloqot va xushmuomalalik" },
+      { title: "🎊 Tadbirlarni tashkil etuvchi", reason: "Energiya, ijtimoiylik va tashkilotchilik qobiliyati" },
+      { title: "🛍️ Savdo mutaxassisi", reason: "Ishontirish va odamlar bilan tez til topish mahorati" }
     ],
     recommendations: [
       "Moliyaviy rejalashtirish va tejamkorlikni o'rganing.",
