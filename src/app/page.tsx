@@ -31,10 +31,18 @@ export default function Home() {
             </span> toping
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Hayotda o'z o'rningizni topishda qiynalyapsizmi? 
-            Psixologik tahlil orqali nafaqat kimligingizni, balki sizga eng katta muvaffaqiyat va baxt keltiradigan yashirin qobiliyatlaringiz hamda kasbiy yo'lingizni kashf eting.
-          </p>
+          <div className="flex flex-col gap-4 max-w-2xl mx-auto mt-6">
+            <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-sm">
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+                <span className="font-bold text-white text-xl md:text-2xl block mb-2">Kelajakdagi kasbingizni toping! 🎯</span>
+                Atigi 10 daqiqalik qiziqarli test orqali 
+                <span className="text-cyan-400 font-semibold"> o'z xarakteringizni </span> 
+                va sizga eng mos keladigan 
+                <span className="text-purple-400 font-semibold"> zo'r kasblarni </span> 
+                aniqlang.
+              </p>
+            </div>
+          </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/test">

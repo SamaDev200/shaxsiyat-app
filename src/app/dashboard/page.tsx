@@ -45,19 +45,17 @@ export default function Dashboard() {
 
   useEffect(() => {
     setMounted(true);
-    const completed = localStorage.getItem("shaxsiyat_completed");
-    if (!completed) {
-      router.push("/test");
-      return;
-    }
-
+    
+    // DEVELOPMENT BYPASS: No redirects
     const savedAnswers = localStorage.getItem("shaxsiyat_answers");
-    if (!savedAnswers) {
-      router.push("/test");
-      return;
+    let answers = {};
+    if (savedAnswers) {
+      answers = JSON.parse(savedAnswers);
+    } else {
+      // Mock answers
+      answers = { 1: 3, 2: -3, 3: 3, 4: -3, 5: 3, 6: -3, 7: 3, 8: -3 };
     }
 
-    const answers = JSON.parse(savedAnswers);
     const calcResult = calculateResults(answers);
     setResult(calcResult);
     setTypeInfo(personalityTypes[calcResult.code] || null);
