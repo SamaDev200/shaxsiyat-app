@@ -45,16 +45,19 @@ export default function Dashboard() {
 
   useEffect(() => {
     setMounted(true);
-    
-    // DEVELOPMENT BYPASS: No redirects
-    const savedAnswers = localStorage.getItem("shaxsiyat_answers");
-    let answers = {};
-    if (savedAnswers) {
-      answers = JSON.parse(savedAnswers);
-    } else {
-      // Mock answers
-      answers = { 1: 3, 2: -3, 3: 3, 4: -3, 5: 3, 6: -3, 7: 3, 8: -3 };
+    const completed = localStorage.getItem("shaxsiyat_completed");
+    if (!completed) {
+      router.push("/test");
+      return;
     }
+
+    const savedAnswers = localStorage.getItem("shaxsiyat_answers");
+    if (!savedAnswers) {
+      router.push("/test");
+      return;
+    }
+
+    const answers = JSON.parse(savedAnswers);
 
     const calcResult = calculateResults(answers);
     setResult(calcResult);
