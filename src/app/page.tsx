@@ -25,16 +25,15 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-            O'z shaxsiyatingizni <br className="hidden md:block" />
+            Siz uchun yaratilgan <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-              kashf eting
-            </span>
+              mukammal kasbni
+            </span> toping
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Siz kimsiz va nima uchun bunday qarorlar qabul qilasiz? Bizning ilmiy tasdiqlangan
-            testimiz orqali o'z xarakteringizni, kuchli tomonlaringizni va sizga eng mos keladigan
-            kasblarni aniqlang.
+            Hayotda o'z o'rningizni topishda qiynalyapsizmi? 
+            Psixologik tahlil orqali nafaqat kimligingizni, balki sizga eng katta muvaffaqiyat va baxt keltiradigan yashirin qobiliyatlaringiz hamda kasbiy yo'lingizni kashf eting.
           </p>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

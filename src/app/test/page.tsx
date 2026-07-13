@@ -112,6 +112,24 @@ export default function TestWizard() {
           </div>
         </div>
 
+        {currentPage === 0 && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8 p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl flex gap-3 items-start"
+          >
+            <div className="text-purple-400 mt-0.5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <div>
+              <h4 className="text-purple-300 font-semibold text-sm mb-1">Muhim eslatma</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Natijalar aniq chiqishi uchun savollarga <b>xolis va chin dildan</b> javob bering. O'zingizni hayotdagi haqiqiy holatingizga qo'yib baholang ("qanday bo'lishni xohlar edingiz" emas). "Befarqman" javobidan iloji boricha kamroq foydalanishga harakat qiling.
+              </p>
+            </div>
+          </motion.div>
+        )}
+
         {/* Questions */}
         <motion.div
           key={currentPage}
@@ -137,13 +155,23 @@ export default function TestWizard() {
                     const isSelected = answers[q.id] === val;
                     const sizeClass = getSizeClass(val);
                     const colorClass = getColorClass(val, isSelected);
+                    
+                    let tooltipText = "";
+                    if (val === 3) tooltipText = "To'liq qo'shilaman";
+                    if (val === 2) tooltipText = "Qo'shilaman";
+                    if (val === 1) tooltipText = "Qisman qo'shilaman";
+                    if (val === 0) tooltipText = "Befarqman";
+                    if (val === -1) tooltipText = "Qisman qo'shilmayman";
+                    if (val === -2) tooltipText = "Qo'shilmayman";
+                    if (val === -3) tooltipText = "Mutlaqo qo'shilmayman";
 
                     return (
                       <button
                         key={val}
                         onClick={() => handleAnswer(q.id, val)}
                         className={"rounded-full border-2 transition-all duration-200 flex items-center justify-center cursor-pointer " + sizeClass + " " + colorClass}
-                        aria-label={"Qiymat " + val}
+                        aria-label={tooltipText}
+                        title={tooltipText}
                       />
                     );
                   })}
