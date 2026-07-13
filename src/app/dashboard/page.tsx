@@ -94,7 +94,7 @@ export default function Dashboard() {
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-12">
           <p className="text-purple-400 font-medium mb-2 tracking-wide uppercase text-sm">Sizning natijangiz</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Shaxsiyat Audit Hisoboti
+            Sizning Shaxsiy Profilingiz 🌟
           </h1>
         </motion.div>
 
@@ -128,26 +128,26 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-2 mb-6">
               <FiTarget className="text-cyan-400 w-5 h-5" />
-              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Spektr Ko&apos;rsatkichlari</p>
+              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Shaxsiyat Tarozisi ⚖️</p>
             </div>
             <div className="space-y-8">
               <SpectrumBar
-                label1="Ekstravert (E)" label2="Introvert (I)"
+                label1="🗣️ Ekstravert (E)" label2="🎧 Introvert (I)"
                 value1={result.percentages.EI.first} value2={result.percentages.EI.second}
                 color1="text-purple-400" color2="text-cyan-400"
               />
               <SpectrumBar
-                label1="Senzor (S)" label2="Intuitiv (N)"
+                label1="🔍 Senzor (S)" label2="🔮 Intuitiv (N)"
                 value1={result.percentages.SN.first} value2={result.percentages.SN.second}
                 color1="text-yellow-400" color2="text-green-400"
               />
               <SpectrumBar
-                label1="Fikrlovchi (T)" label2="Hissiyotli (F)"
+                label1="🧠 Fikrlovchi (T)" label2="❤️ Hissiyotli (F)"
                 value1={result.percentages.TF.first} value2={result.percentages.TF.second}
                 color1="text-blue-400" color2="text-pink-400"
               />
               <SpectrumBar
-                label1="Rejali (J)" label2="Moslashuvchan (P)"
+                label1="📅 Rejali (J)" label2="🌊 Moslashuvchan (P)"
                 value1={result.percentages.JP.first} value2={result.percentages.JP.second}
                 color1="text-orange-400" color2="text-indigo-400"
               />
@@ -162,7 +162,7 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-2 mb-4">
               <FiCheck className="text-green-400 w-5 h-5" />
-              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Kuchli Tomonlar</p>
+              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">🚀 Kuchli Tomonlar</p>
             </div>
             <ul className="space-y-3">
               {typeInfo.strengths.map((s, i) => (
@@ -188,7 +188,7 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-2 mb-4">
               <FiAlertTriangle className="text-red-400 w-5 h-5" />
-              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Kuchsiz Tomonlar</p>
+              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">🌱 O'sish Nuqtalari</p>
             </div>
             <ul className="space-y-3">
               {typeInfo.weaknesses.map((w, i) => (
@@ -214,7 +214,7 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-2 mb-6">
               <FiBriefcase className="text-yellow-400 w-5 h-5" />
-              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Sizga Mos Kasblar</p>
+              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">💼 Sizga Mos Kasblar</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {typeInfo.careers.map((c, i) => (
@@ -243,7 +243,7 @@ export default function Dashboard() {
           >
             <div className="flex items-center gap-2 mb-4">
               <FiTarget className="text-purple-400 w-5 h-5" />
-              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Tavsiyalar</p>
+              <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">💡 Siz uchun Maxsus Maslahatlar</p>
             </div>
             <ul className="space-y-3">
               {typeInfo.recommendations.map((r, i) => (

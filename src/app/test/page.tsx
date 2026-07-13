@@ -90,11 +90,20 @@ export default function TestWizard() {
     return "border-gray-500 hover:bg-gray-500/20";
   }
 
+  let motivationText = "";
+  if (progress <= 30) motivationText = "Yaxshi boshlanish! O'zingizni kashf etishga tayyormisiz? 🚀";
+  else if (progress <= 60) motivationText = "Zo'r ketyapsiz! Yana bir oz qoldi 🔥";
+  else if (progress < 100) motivationText = "Deyarli tugadi! Siz haqingizdagi qiziq faktlarni bilishga oz qoldi 🎯";
+  else motivationText = "Ajoyib! Natijalarni ko'rishga tayyormisiz? 🎉";
+
   return (
     <div className="min-h-screen bg-[#0B0F19] text-white py-12 px-4 sm:px-6 flex flex-col items-center">
       <div className="w-full max-w-3xl">
         {/* Progress Bar */}
         <div className="mb-8 sticky top-0 bg-[#0B0F19] pt-4 pb-6 z-10 border-b border-white/10">
+          <div className="text-center mb-4">
+            <p className="text-purple-400 font-medium text-sm animate-pulse">{motivationText}</p>
+          </div>
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-400 text-sm font-medium">
               {Math.round(progress)}% tugallandi
