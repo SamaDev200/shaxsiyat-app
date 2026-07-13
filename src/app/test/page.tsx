@@ -3,20 +3,61 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import questionsData from "../../data/questions.json";
+import { calculateResults } from "../../lib/scoring";
 
 type AnswerValue = -3 | -2 | -1 | 0 | 1 | 2 | 3;
+type Question = { id: number; text: string; axis: string; direction: number };
 
 export default function TestWizard() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [answers, setAnswers] = useState<Record<number, AnswerValue>>({});
+  const [questionsData, setQuestionsData] = useState<Question[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
   const QUESTIONS_PER_PAGE = 6;
-  const totalPages = Math.ceil(questionsData.length / QUESTIONS_PER_PAGE);
+  const totalPages = Math.ceil(questionsData.length / QUESTIONS_PER_PAGE) || 1;
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/login");
+      return;
+    }
+
+    const initializeData = async () => {
+      try {
+        const isRetake = localStorage.getItem("shaxsiyat_retake") === "true";
+        
+        // First check if user already has results
+        const resResult = await fetch("/api/results", {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
+        const dataResult = await resResult.json();
+        
+        // Redirect to dashboard ONLY if they have results AND they are not explicitly retaking
+        if (dataResult && dataResult.length > 0 && !isRetake) {
+          router.push("/dashboard");
+          return;
+        }
+
+        const res = await fetch("/api/questions");
+        const data = await res.json();
+        if (res.ok) {
+          setQuestionsData(data);
+        }
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+        setMounted(true);
+      }
+    };
+
+    initializeData();
+
     const saved = localStorage.getItem("shaxsiyat_answers");
     if (saved) {
       setAnswers(JSON.parse(saved));
@@ -25,17 +66,22 @@ export default function TestWizard() {
     if (savedPage) {
       setCurrentPage(parseInt(savedPage, 10));
     }
-    setMounted(true);
-  }, []);
+  }, [router]);
 
   useEffect(() => {
-    if (mounted) {
+    if (mounted && Object.keys(answers).length > 0) {
       localStorage.setItem("shaxsiyat_answers", JSON.stringify(answers));
       localStorage.setItem("shaxsiyat_page", currentPage.toString());
     }
   }, [answers, currentPage, mounted]);
 
-  if (!mounted) return null;
+  if (!mounted || loading) {
+    return (
+      <div className="min-h-screen bg-[#0B0F19] text-white flex items-center justify-center">
+        <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full" />
+      </div>
+    );
+  }
 
   const startIndex = currentPage * QUESTIONS_PER_PAGE;
   const currentQuestions = questionsData.slice(startIndex, startIndex + QUESTIONS_PER_PAGE);
@@ -44,18 +90,43 @@ export default function TestWizard() {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     const allAnswered = currentQuestions.every((q) => answers[q.id] !== undefined);
     if (!allAnswered) {
       alert("Iltimos, ushbu sahifadagi barcha savollarga javob bering.");
       return;
     }
+    
     if (currentPage < totalPages - 1) {
       setCurrentPage((p) => p + 1);
       window.scrollTo(0, 0);
     } else {
-      localStorage.setItem("shaxsiyat_completed", "true");
-      router.push("/dashboard");
+      setSubmitting(true);
+      try {
+        const calcResult = calculateResults(answers, questionsData as any);
+        const token = localStorage.getItem("token");
+        
+        await fetch("/api/results", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            personalityCode: calcResult.code,
+            axisPercentages: calcResult.percentages,
+            answers: answers
+          }),
+        });
+
+        localStorage.setItem("shaxsiyat_completed", "true");
+        localStorage.removeItem("shaxsiyat_retake");
+        router.push("/dashboard");
+      } catch (e) {
+        console.error(e);
+        alert("Natijani saqlashda xatolik yuz berdi");
+        setSubmitting(false);
+      }
     }
   };
 
@@ -154,45 +225,48 @@ export default function TestWizard() {
                 {q.text}
               </h3>
 
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span className="text-purple-400 text-sm font-semibold hidden sm:block w-32 text-right">
-                  Qo&apos;shilaman
-                </span>
-
-                <div className="flex items-center justify-center gap-2 sm:gap-4 w-full sm:w-auto">
-                  {likertValues.map((val) => {
-                    const isSelected = answers[q.id] === val;
-                    const sizeClass = getSizeClass(val);
-                    const colorClass = getColorClass(val, isSelected);
-                    
-                    let tooltipText = "";
-                    if (val === 3) tooltipText = "To'liq qo'shilaman";
-                    if (val === 2) tooltipText = "Qo'shilaman";
-                    if (val === 1) tooltipText = "Qisman qo'shilaman";
-                    if (val === 0) tooltipText = "Befarqman";
-                    if (val === -1) tooltipText = "Qisman qo'shilmayman";
-                    if (val === -2) tooltipText = "Qo'shilmayman";
-                    if (val === -3) tooltipText = "Mutlaqo qo'shilmayman";
-
-                    return (
-                      <button
-                        key={val}
-                        onClick={() => handleAnswer(q.id, val)}
-                        className={"rounded-full border-2 transition-all duration-200 flex items-center justify-center cursor-pointer " + sizeClass + " " + colorClass}
-                        aria-label={tooltipText}
-                        title={tooltipText}
-                      />
-                    );
-                  })}
+              <div className="flex flex-col items-center gap-4">
+                {/* Mobile Labels */}
+                <div className="flex w-full justify-between sm:hidden px-2">
+                  <span className="text-purple-400 text-xs font-semibold">Qo&apos;shilaman</span>
+                  <span className="text-cyan-400 text-xs font-semibold">Qo&apos;shilmayman</span>
                 </div>
 
-                <span className="text-cyan-400 text-sm font-semibold hidden sm:block w-32 text-left">
-                  Qo&apos;shilmayman
-                </span>
+                <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full">
+                  <span className="text-purple-400 text-sm font-semibold hidden sm:block w-24 md:w-32 text-right">
+                    Qo&apos;shilaman
+                  </span>
 
-                <div className="flex justify-between w-full sm:hidden text-xs font-semibold mt-2 px-2">
-                  <span className="text-purple-400">Qo&apos;shilaman</span>
-                  <span className="text-cyan-400">Qo&apos;shilmayman</span>
+                  <div className="flex items-center justify-center gap-1.5 sm:gap-4 flex-shrink-0">
+                    {likertValues.map((val) => {
+                      const isSelected = answers[q.id] === val;
+                      const sizeClass = getSizeClass(val);
+                      const colorClass = getColorClass(val, isSelected);
+                      
+                      let tooltipText = "";
+                      if (val === 3) tooltipText = "To'liq qo'shilaman";
+                      if (val === 2) tooltipText = "Qo'shilaman";
+                      if (val === 1) tooltipText = "Qisman qo'shilaman";
+                      if (val === 0) tooltipText = "Befarqman";
+                      if (val === -1) tooltipText = "Qisman qo'shilmayman";
+                      if (val === -2) tooltipText = "Qo'shilmayman";
+                      if (val === -3) tooltipText = "Mutlaqo qo'shilmayman";
+
+                      return (
+                        <button
+                          key={val}
+                          onClick={() => handleAnswer(q.id, val)}
+                          className={"rounded-full border-2 transition-all duration-200 flex items-center justify-center cursor-pointer " + sizeClass + " " + colorClass}
+                          aria-label={tooltipText}
+                          title={tooltipText}
+                        />
+                      );
+                    })}
+                  </div>
+
+                  <span className="text-cyan-400 text-sm font-semibold hidden sm:block w-24 md:w-32 text-left">
+                    Qo&apos;shilmayman
+                  </span>
                 </div>
               </div>
             </div>

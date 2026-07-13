@@ -45,7 +45,7 @@ export default function Home() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/test">
+            <Link href="/register">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

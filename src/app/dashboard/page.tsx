@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { calculateResults, type PersonalityResult } from "../../lib/scoring";
 import { personalityTypes, type PersonalityType } from "../../data/personalityTypes";
-import { FiDownload, FiRepeat, FiArrowRight, FiCheck, FiAlertTriangle, FiBriefcase, FiTarget } from "react-icons/fi";
+import { FiDownload, FiRepeat, FiArrowRight, FiCheck, FiAlertTriangle, FiBriefcase, FiTarget, FiHome } from "react-icons/fi";
 
 function SpectrumBar({ label1, label2, value1, value2, color1, color2 }: {
   label1: string; label2: string; value1: number; value2: number; color1: string; color2: string;
@@ -44,30 +45,44 @@ export default function Dashboard() {
   const [typeInfo, setTypeInfo] = useState<PersonalityType | null>(null);
 
   useEffect(() => {
-    setMounted(true);
-    const completed = localStorage.getItem("shaxsiyat_completed");
-    if (!completed) {
-      router.push("/test");
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/login");
       return;
     }
 
-    const savedAnswers = localStorage.getItem("shaxsiyat_answers");
-    if (!savedAnswers) {
-      router.push("/test");
-      return;
-    }
+    const fetchResult = async () => {
+      try {
+        const res = await fetch("/api/results", {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
+        const data = await res.json();
+        
+        if (data && data.length > 0) {
+          const latest = data[0];
+          setResult({
+            code: latest.personalityCode,
+            percentages: latest.axisPercentages
+          });
+          setTypeInfo(personalityTypes[latest.personalityCode] || null);
+        } else {
+          router.push("/test");
+        }
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setMounted(true);
+      }
+    };
 
-    const answers = JSON.parse(savedAnswers);
-
-    const calcResult = calculateResults(answers);
-    setResult(calcResult);
-    setTypeInfo(personalityTypes[calcResult.code] || null);
+    fetchResult();
   }, [router]);
 
   const handleRetake = () => {
     localStorage.removeItem("shaxsiyat_answers");
     localStorage.removeItem("shaxsiyat_page");
     localStorage.removeItem("shaxsiyat_completed");
+    localStorage.setItem("shaxsiyat_retake", "true");
     router.push("/test");
   };
 
@@ -91,7 +106,22 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#0B0F19] text-white px-4 sm:px-6 py-12">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+        {/* Navigation / Header */}
+        <div className="flex justify-between items-center mb-12">
+          <Link href="/">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-2.5 bg-white/[0.05] border border-white/10 text-white rounded-full font-medium flex items-center gap-2 transition-all hover:bg-white/[0.1]"
+            >
+              <FiHome className="w-4 h-4" /> Bosh sahifa
+            </motion.button>
+          </Link>
+          
+          {/* Optional logo or text on the right side if needed, or leave empty */}
+        </div>
+
+        {/* Header Text */}
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-12">
           <p className="text-purple-400 font-medium mb-2 tracking-wide uppercase text-sm">Sizning natijangiz</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white">

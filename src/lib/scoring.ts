@@ -3,8 +3,6 @@
 // direction: 1 = agreeing pushes toward first letter, -1 = toward second letter
 // answer values: +3 (strongly agree) to -3 (strongly disagree)
 
-import questionsData from "../data/questions.json";
-
 export type AxisScores = {
   EI: number; // positive = E, negative = I
   SN: number; // positive = S, negative = N
@@ -24,10 +22,12 @@ export type PersonalityResult = {
   percentages: AxisPercentages;
 };
 
-export function calculateResults(answers: Record<number, number>): PersonalityResult {
+type QuestionType = { id: number; text: string; axis: string; direction: number };
+
+export function calculateResults(answers: Record<number, number>, questions: QuestionType[]): PersonalityResult {
   const rawScores: AxisScores = { EI: 0, SN: 0, TF: 0, JP: 0 };
 
-  for (const q of questionsData) {
+  for (const q of questions) {
     const answer = answers[q.id];
     if (answer === undefined) continue;
 
